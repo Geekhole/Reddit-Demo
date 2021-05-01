@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="lines_max_row_hot_post_title" type="integer">2</item>
+    <item name="lines_max_row_hot_post_description" type="integer">4</item>
+</resources>

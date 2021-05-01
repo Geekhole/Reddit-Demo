@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="radius_row_hot_post_corner">8dp</dimen>
+    <dimen name="margin_app_defaults">16dp</dimen>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="margin_app_small">8dp</dimen>
+    <dimen name="margin_app_extra_small">4dp</dimen>
+    <dimen name="height_row_hot_post">200dp</dimen>
+    <dimen name="height_width_row_hot_post_thumbnail">75dp</dimen>
+</resources>

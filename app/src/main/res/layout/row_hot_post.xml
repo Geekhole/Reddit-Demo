@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="post"
+            type="uk.geekhole.hotreddit.database.models.Post" />
+
+        <import type="android.webkit.URLUtil" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_row_hot_post"
+        android:layout_marginTop="@dimen/margin_app_extra_small"
+        android:layout_marginBottom="@dimen/margin_app_extra_small"
+        android:background="@drawable/background_row_hot_post"
+        android:padding="@dimen/margin_app_defaults">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_app_small"
+            android:ellipsize="end"
+            android:lines="@integer/lines_max_row_hot_post_title"
+            android:text="@{post.title}"
+            android:textSize="@dimen/text_size_normal"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/thumbnail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="A cool post about android!" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_app_small"
+            android:layout_marginEnd="@dimen/margin_app_small"
+            android:layout_marginBottom="@dimen/margin_app_small"
+            android:ellipsize="end"
+            android:lines="@integer/lines_max_row_hot_post_description"
+            android:text="@{post.title}"
+            app:layout_constraintBottom_toTopOf="@id/author"
+            app:layout_constraintEnd_toStartOf="@id/thumbnail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            tools:text="Here's some riveting content about Android that everyone really wants to read." />
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="@dimen/height_width_row_hot_post_thumbnail"
+            android:layout_height="@dimen/height_width_row_hot_post_thumbnail"
+            android:contentDescription="@string/content_description_post_thumbnail"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icn_thumbnail_placeholder"
+            android:visibility="@{URLUtil.isValidUrl(post.thumbnail) ? View.VISIBLE : View.GONE}"
+            app:imageUrl="@{post.thumbnail}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_app_small"
+            android:contentDescription="@string/content_description_post_user_profile"
+            android:src="@drawable/icn_profile_placeholder"
+            app:layout_constraintBottom_toBottomOf="@id/author"
+            app:layout_constraintEnd_toStartOf="@id/author"
+            app:layout_constraintTop_toTopOf="@id/author" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{post.author}"
+            android:textColor="@color/primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Josh Mason" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

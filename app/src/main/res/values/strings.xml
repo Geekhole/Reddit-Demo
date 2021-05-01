@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hot Reddit</string>
+    <string name="error_generic">Sorry, but we\'ve run into a problem! Please try again.</string>
+    <string name="error_fetching_posts">There was an error fetching the posts. Try swiping down to refresh and try again.</string>
+    <string name="content_description_post_thumbnail">Post thumbnail image</string>
+    <string name="content_description_post_user_profile">User profile image</string>
+</resources>
